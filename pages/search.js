@@ -10,7 +10,7 @@ import Head from 'next/head'
 
 
 
-const search = ({getData, image, title,total, description, price, rating, locaa}) => {
+const Search = ({getData, image, title,total, description, price, rating, locaa}) => {
     const [hidden, setHidden] = useState(true);
     const clicked = () => {
         setHidden(false)
@@ -74,7 +74,7 @@ const search = ({getData, image, title,total, description, price, rating, locaa}
     );
 }
 
-export default search;
+export default Search;
 
 export const getServerSideProps = async(ctx) => {
     const searchData = await fetch("https://links.papareact.com/isz")
