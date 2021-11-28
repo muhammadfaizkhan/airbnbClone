@@ -11,7 +11,7 @@ import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRangePicker } from 'react-date-range';
 import {AiOutlineUserAdd} from 'react-icons/ai'
-import useRouter from 'next/dist/client/router';
+import {useRouter} from 'next/dist/client/router';
 
 
 const Header = ({placeholder}) => { 
