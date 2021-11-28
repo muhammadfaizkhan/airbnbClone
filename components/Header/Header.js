@@ -6,7 +6,7 @@ import {VscGlobe} from 'react-icons/vsc'
 import {IoIosMenu} from 'react-icons/io'
 import {FaUserCircle} from 'react-icons/fa'
 import 'animate.css';
-import { useState } from 'react'
+// import { useState } from 'react'
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRangePicker } from 'react-date-range';
@@ -15,14 +15,14 @@ import {useRouter} from 'next/dist/client/router';
 
 
 const Header = ({placeholder}) => { 
-    const [searchInput, setSearchInput] = useState('')
-    const [startDate, setStartDate] = useState(new Date())
-    const [endDate, setEndDate] = useState(new Date())
+    // const [searchInput, setSearchInput] = useState('')
+    // const [startDate, setStartDate] = useState(new Date())
+    // const [endDate, setEndDate] = useState(new Date())
     const router = useRouter()
-    const [noGuests, setNoGuests] = useState('')
+    // const [noGuests, setNoGuests] = useState('')
     const handleSelect = (ranges) => {
-        setStartDate(ranges.selection.startDate)
-        setEndDate(ranges.selection.endDate)
+        // setStartDate(ranges.selection.startDate)
+        // setEndDate(ranges.selection.endDate)
     }
     const selectionRange = {
         startDate: startDate,
@@ -31,26 +31,26 @@ const Header = ({placeholder}) => {
     }
 
     const resetInput = () => {
-        setSearchInput("")
+        // setSearchInput("")
     }
     const searchFunc = () => {
-        router.push({
-            pathname: '/search',
-            query : {
-                location: searchInput,
-                startDate: startDate.toISOString(),
-                endDate: endDate.toISOString(),
-                noGuests
-            }
-        })
+        // router.push({
+        //     pathname: '/search',
+        //     query : {
+        //         location: searchInput,
+        //         startDate: startDate.toISOString(),
+        //         endDate: endDate.toISOString(),
+        //         noGuests
+        //     }
+        // })
     }
     return (
         <div className="fixed grid grid-cols-3 w-full bg-white shadow-lg py-5 px-9 z-50">
-           <div onClick={() => router.push('/')} className="relative items-center h-9 my-auto hidden md:flex animate__animated animate__fadeInDown">
+           <div className="relative items-center h-9 my-auto hidden md:flex animate__animated animate__fadeInDown">
                 <Image alt="airbnb clone" className="cursor-pointer" src="https://links.papareact.com/qd3" layout="fill" objectFit="contain" objectPosition="left"/>
            </div>
            <div className="flex animate__animated animate__fadeInDown items-center border rounded-3xl mx-auto px-2 py-1 justify-between shadow-md lg:flex-grow  md:flex-grow w-96 md:w-auto bg-gray-100 md:bg-white lg:bg-white">
-               <input value={searchInput} required onChange={(e) => setSearchInput(e.target.value)} className="ml-2 bg-transparent py-2 flex-grow mr-2 font-medium focus:outline-none placeholder-gray-400 placeholder-text-xs" type="text" placeholder={placeholder || "Start your search"}/>
+               <input value={searchInput} required  className="ml-2 bg-transparent py-2 flex-grow mr-2 font-medium focus:outline-none placeholder-gray-400 placeholder-text-xs" type="text" placeholder={placeholder || "Start your search"}/>
                <GoSearch type="submit" className="bg-red-400 animate__animated animate__zoomIn text-white rounded-3xl p-2 md:inline-flex cursor-pointer" size={32}/>
            </div>
            <div className="hidden md:flex lg:flex items-center relative -right-32 flex-grow">

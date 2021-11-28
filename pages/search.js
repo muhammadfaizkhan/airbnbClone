@@ -1,8 +1,8 @@
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import {IoIosClose} from 'react-icons/io'
-import { useState } from 'react'
-import {useRouter} from 'next/dist/client/router'
+// import { useState } from 'react'
+// import {useRouter} from 'next/dist/client/router'
 import {format} from 'date-fns'
 import InfoCard from '../components/InfoCard/InfoCard'
 import CardThree from '../components/CardThree/CardThree'
@@ -11,11 +11,11 @@ import Head from 'next/head'
 
 
 const Search = ({getData, image, title,total, description, price, rating, locaa}) => {
-    const [hidden, setHidden] = useState(true);
+    // const [hidden, setHidden] = useState(true);
     const clicked = () => {
-        setHidden(false)
+        // setHidden(false)
     }
-    const router = useRouter()
+    // const router = useRouter()
     const {location, startDate, endDate, noGuests} = router.query;
     const formattedStartDate = format(new Date(startDate),"dd MMMM yy");
     const formattedEndDate = format(new Date(endDate),"dd MMMM yy");
