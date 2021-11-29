@@ -1,18 +1,9 @@
 import Image from 'next/image'
-import { useState } from 'react';
 import {AiFillStar, AiOutlineHeart, AiFillHeart} from 'react-icons/ai'
 
 
 
 const InfoCard = ({image, title, description, price, rating, locaa, total}) => {
-    const [click, setClick] = useState(true)
-    const onClick = () => {
-        setClick(true)
-        alert("You've unliked a place")
-    }
-    const onClicked = () => {
-        setClick(false)
-    }
     return (
         <div className="flex animate__animated animate__fadeInUp cursor-pointer hover:opacity-80 hover:shadow-lg py-7 px-2 border-b">
             <div className="relative mb-16 h-24 w-40 md:h-52 md:w-80 flex-shrink-0">
@@ -21,10 +12,7 @@ const InfoCard = ({image, title, description, price, rating, locaa, total}) => {
             <div className="flex flex-col flex-grow pl-5">
                 <div className="flex items-center justify-between">
                     <p className="text-xs text-gray-500">{locaa}</p>
-                    {click ?
-                        <AiOutlineHeart onClick={onClicked} className="cursor-pointer"/>                    
-                    :   <AiFillHeart onClick={onClick} className="text-red-400 cursor-pointer"/>                
-                    }
+                    <AiOutlineHeart className="cursor-pointer"/>                    
                 </div>
                 <h4 className="text-xl font-bold">{title}</h4>
                 {/* <div className="border-b w-16 pt-2 mb-4"/> */}
